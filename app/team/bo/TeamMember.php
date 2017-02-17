@@ -1,6 +1,6 @@
 <?php
 
-namespace vag\bo;
+namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
@@ -15,7 +15,6 @@ use rocket\spec\ei\component\field\impl\translation\Translator;
 
 class TeamMember extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
-		$ai->p('references', new AnnoOneToMany(Reference::getClass(), 'teamMember'));
 		$ai->p('team', new AnnoManyToOne(Team::getClass()));
 		$ai->p('foto', new AnnoManagedFile());
 		$ai->p('teamMemberTs', new AnnoOneToMany(TeamMemberT::getClass(), 'teamMember', CascadeType::ALL, null, true));
@@ -28,7 +27,6 @@ class TeamMember extends ObjectAdapter {
 	private $email;
 	private $foto;
 	private $orderIndex;
-	private $references;
 	private $team;
 	private $teamMemberTs;
 	

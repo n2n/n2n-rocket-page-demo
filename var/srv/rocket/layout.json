@@ -1,7 +1,8 @@
 {
     "menuGroups": {
         "Inhalt": {
-            "page-page": "Seiten"
+            "page-page": "Seiten",
+            "team-team": "Teams"
         }
     }
 }

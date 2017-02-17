@@ -1,0 +1,25 @@
+{
+    "specs": {
+        "contact-contact-page-controller": {
+            "type": "entity",
+            "entity": "contact\\controller\\ContactPageController",
+            "dataSourceName": null,
+            "label": "Kontaktformular",
+            "pluralLabel": "Kontaktformulare",
+            "fields": {
+                "recipient": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
+                    "props": [],
+                    "label": "Empf\u00e4nger",
+                    "objectProperty": "recipient",
+                    "entityProperty": "recipient"
+                }
+            },
+            "commands": [],
+            "modificators": [],
+            "defaultMaskId": null
+        }
+    },
+    "commonEiMasks": [],
+    "menuItems": []
+}

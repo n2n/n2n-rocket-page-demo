@@ -1,6 +1,6 @@
 <?php
 
-namespace vag\bo;
+namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
@@ -18,7 +18,6 @@ class Team extends ObjectAdapter {
 	
 	private $id;
 	private $orderIndex;
-	private $showImage = false;
 	private $teamMembers;
 	private $teamTs;
 	
@@ -36,14 +35,6 @@ class Team extends ObjectAdapter {
 
 	public function setOrderIndex($orderIndex) {
 		$this->orderIndex = $orderIndex;
-	}
-
-	public function getShowImage() {
-		return $this->showImage;
-	}
-
-	public function setShowImage($showImage) {
-		$this->showImage = $showImage;
 	}
 
 	/**

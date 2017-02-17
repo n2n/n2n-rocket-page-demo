@@ -1,6 +1,6 @@
 <?php
 
-namespace vag\bo;
+namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
