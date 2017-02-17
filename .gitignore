@@ -19,3 +19,6 @@
 /var/log/
 /var/tmp/
 /vendor/
+/hangar/var/srv
+/hangar/var/tmp
+/public/files

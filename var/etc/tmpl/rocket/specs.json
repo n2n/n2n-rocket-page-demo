@@ -1,0 +1,17 @@
+{
+    "specs": {
+        "tmpl-tmpl-page-controller": {
+            "type": "entity",
+            "entity": "tmpl\\controller\\TmplPageController",
+            "dataSourceName": null,
+            "label": "Template",
+            "pluralLabel": "Templates",
+            "fields": [],
+            "commands": [],
+            "modificators": [],
+            "defaultMaskId": null
+        }
+    },
+    "commonEiMasks": [],
+    "menuItems": []
+}
