@@ -1,5 +1,5 @@
 -- Mysql Backup of n2n7_demo
--- Date 2017-02-17T18:54:53+01:00
+-- Date 2017-02-17T22:43:21+01:00
 -- Backup by 
 
 DROP TABLE IF EXISTS `ci_article`;
@@ -47,7 +47,18 @@ CREATE TABLE `ci_wysiwyg` (
 INSERT INTO `ci_wysiwyg` (`id`, `content_html`) 
 VALUES ( '1',  '<p>Ich bin ein Freitext</p>\r\n'),
 ( '2', '<p>Ich bin Freitext</p>\r\n'),
-( '6', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor, sapien vel posuere malesuada, ipsum neque sagittis massa, eu laoreet odio tellus nec ligula. Etiam iaculis velit faucibus quam convallis pretium. In eu enim vitae neque tempor sagittis vitae in nisl. Vivamus fermentum turpis nec enim aliquam venenatis. Cras convallis fermentum condimentum. Morbi vitae tortor a tellus posuere scelerisque. Sed non leo et ante laoreet rutrum ut et risus. Nam mattis rhoncus lectus sit amet porta.</p>\r\n\r\n<p>In molestie vel metus et interdum. Suspendisse nec nulla purus. Aenean vel accumsan purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In facilisis porttitor odio, a condimentum magna. Praesent vitae nisi suscipit, vehicula sapien sit amet, consequat eros. Integer ultrices nisl eu felis elementum ornare. Vestibulum eu elit ut magna blandit sagittis a sed neque. Phasellus nec eros semper, bibendum erat quis, sagittis diam. Donec in diam tortor. Morbi sed elit urna. Mauris sapien ipsum, sodales ut quam at, porta posuere ipsum.</p>\r\n\r\n<p>Praesent iaculis, ante ut auctor consequat, leo massa fringilla ante, eleifend vehicula nisl ipsum sit amet odio. Proin a pellentesque metus, vel semper neque. Pellentesque accumsan gravida odio, eu finibus nibh dapibus ut. Sed ullamcorper sit amet quam eu pulvinar. Suspendisse ac felis purus. Cras ut odio iaculis ipsum vehicula condimentum nec a sapien. Duis non mauris suscipit, semper magna id, tristique augue. Morbi sit amet ex a risus volutpat facilisis. Nunc posuere ante ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, magna non cursus congue, ante nisl rhoncus turpis, ac tincidunt leo nunc vitae libero. Ut sit amet turpis aliquet, porta lectus at, rutrum nunc. Sed lobortis quam tempus dolor varius gravida. Phasellus vitae velit erat.</p>\r\n\r\n<p>Suspendisse posuere neque a risus ornare semper. Maecenas elementum justo quis ante condimentum, porttitor consequat urna volutpat. Aliquam eget elit sit amet lectus pulvinar fermentum et vel tortor. Nulla ultrices id nunc eu sodales. Pellentesque et convallis nibh, vitae condimentum erat. Sed tristique, nibh non vestibulum pretium, tellus diam porta nisl, eget pretium ipsum ipsum in sem. Vestibulum tempor volutpat metus vitae rutrum. Suspendisse tempus porta erat. Duis quis consequat dolor. Proin sed vehicula metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n');
+( '6', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor, sapien vel posuere malesuada, ipsum neque sagittis massa, eu laoreet odio tellus nec ligula. Etiam iaculis velit faucibus quam convallis pretium. In eu enim vitae neque tempor sagittis vitae in nisl. Vivamus fermentum turpis nec enim aliquam venenatis. Cras convallis fermentum condimentum. Morbi vitae tortor a tellus posuere scelerisque. Sed non leo et ante laoreet rutrum ut et risus. Nam mattis rhoncus lectus sit amet porta.</p>\r\n\r\n<p>In molestie vel metus et interdum. Suspendisse nec nulla purus. Aenean vel accumsan purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In facilisis porttitor odio, a condimentum magna. Praesent vitae nisi suscipit, vehicula sapien sit amet, consequat eros. Integer ultrices nisl eu felis elementum ornare. Vestibulum eu elit ut magna blandit sagittis a sed neque. Phasellus nec eros semper, bibendum erat quis, sagittis diam. Donec in diam tortor. Morbi sed elit urna. Mauris sapien ipsum, sodales ut quam at, porta posuere ipsum.</p>\r\n\r\n<p>Praesent iaculis, ante ut auctor consequat, leo massa fringilla ante, eleifend vehicula nisl ipsum sit amet odio. Proin a pellentesque metus, vel semper neque. Pellentesque accumsan gravida odio, eu finibus nibh dapibus ut. Sed ullamcorper sit amet quam eu pulvinar. Suspendisse ac felis purus. Cras ut odio iaculis ipsum vehicula condimentum nec a sapien. Duis non mauris suscipit, semper magna id, tristique augue. Morbi sit amet ex a risus volutpat facilisis. Nunc posuere ante ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, magna non cursus congue, ante nisl rhoncus turpis, ac tincidunt leo nunc vitae libero. Ut sit amet turpis aliquet, porta lectus at, rutrum nunc. Sed lobortis quam tempus dolor varius gravida. Phasellus vitae velit erat.</p>\r\n\r\n<p>Suspendisse posuere neque a risus ornare semper. Maecenas elementum justo quis ante condimentum, porttitor consequat urna volutpat. Aliquam eget elit sit amet lectus pulvinar fermentum et vel tortor. Nulla ultrices id nunc eu sodales. Pellentesque et convallis nibh, vitae condimentum erat. Sed tristique, nibh non vestibulum pretium, tellus diam porta nisl, eget pretium ipsum ipsum in sem. Vestibulum tempor volutpat metus vitae rutrum. Suspendisse tempus porta erat. Duis quis consequat dolor. Proin sed vehicula metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n'),
+( '7', '<h2>Hofmänner New Media</h2>\r\n\r\n<p>Stadthausstrasse 65<br />\r\n8400 Winterthur</p>\r\n\r\n<p><a href=\"mailto:info@hnm.ch\">info@hnm.ch</a></p>\r\n');
+
+DROP TABLE IF EXISTS `contact_page_controller`;
+CREATE TABLE `contact_page_controller` ( 
+	`id` INT NOT NULL, 
+	`recipient` VARCHAR(255) NULL
+	, PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+
+INSERT INTO `contact_page_controller` (`id`, `recipient`) 
+VALUES ( '5',  NULL);
 
 DROP TABLE IF EXISTS `page`;
 CREATE TABLE `page` ( 
@@ -71,7 +82,7 @@ CREATE TABLE `page` (
 INSERT INTO `page` (`id`, `internal_page_id`, `external_url`, `page_content_id`, `subsystem_name`, `online`, `in_path`, `hook_key`, `in_navigation`, `nav_target_new_window`, `lft`, `rgt`, `last_mod`, `last_mod_by`) 
 VALUES ( '89',  NULL,  NULL,  '1',  NULL,  '1',  '1',  NULL,  '1',  '0',  '1',  '8',  '2017-02-17 18:00:20',  NULL),
 ( '90', NULL, NULL, NULL, NULL, '1', '1', NULL, '1', '0', '2', '3', '2016-12-23 10:42:53', NULL),
-( '91', NULL, NULL, NULL, NULL, '1', '1', NULL, '1', '0', '4', '5', '2016-12-23 10:43:06', NULL),
+( '91', NULL, NULL, '3', NULL, '1', '1', NULL, '1', '0', '4', '5', '2017-02-17 21:45:35', NULL),
 ( '92', NULL, NULL, '2', NULL, '1', '1', NULL, '1', '0', '6', '7', '2017-02-17 18:01:59', NULL);
 
 DROP TABLE IF EXISTS `page_content`;
@@ -86,7 +97,8 @@ CREATE TABLE `page_content` (
 
 INSERT INTO `page_content` (`id`, `subsystem_name`, `page_controller_id`, `page_id`, `ssl`) 
 VALUES ( '1',  NULL,  '2',  NULL,  '0'),
-( '2', NULL, '3', NULL, '0');
+( '2', NULL, '3', NULL, '0'),
+( '3', NULL, '5', NULL, '0');
 
 DROP TABLE IF EXISTS `page_content_t`;
 CREATE TABLE `page_content_t` ( 
@@ -109,7 +121,8 @@ CREATE TABLE `page_controller` (
 
 INSERT INTO `page_controller` (`id`, `method_name`) 
 VALUES ( '2',  'startPage'),
-( '3', 'standardPage');
+( '3', 'standardPage'),
+( '5', 'contact');
 
 DROP TABLE IF EXISTS `page_controller_t`;
 CREATE TABLE `page_controller_t` ( 
@@ -121,7 +134,8 @@ CREATE TABLE `page_controller_t` (
 
 INSERT INTO `page_controller_t` (`id`, `n2n_locale`, `page_controller_id`) 
 VALUES ( '1',  'de_CH',  '2'),
-( '2', 'de_CH', '3');
+( '2', 'de_CH', '3'),
+( '3', 'de_CH', '5');
 
 DROP TABLE IF EXISTS `page_controller_t_content_items`;
 CREATE TABLE `page_controller_t_content_items` ( 
@@ -136,7 +150,8 @@ VALUES ( '1',  '1'),
 ( '1', '3'),
 ( '1', '4'),
 ( '1', '5'),
-( '2', '6');
+( '2', '6'),
+( '3', '7');
 
 DROP TABLE IF EXISTS `page_t`;
 CREATE TABLE `page_t` ( 
@@ -172,7 +187,8 @@ VALUES ( '1',  'hero',  '20'),
 ( '3', 'main', '30'),
 ( '4', 'main', '40'),
 ( '5', 'main', '50'),
-( '6', 'main', '20');
+( '6', 'main', '20'),
+( '7', 'aside', '20');
 
 DROP TABLE IF EXISTS `rocket_critmod_save`;
 CREATE TABLE `rocket_critmod_save` ( 
@@ -227,7 +243,8 @@ CREATE TABLE `rocket_login` (
 INSERT INTO `rocket_login` (`id`, `nick`, `wrong_password`, `power`, `successfull`, `ip`, `date_time`) 
 VALUES ( '64',  'super',  NULL,  'superadmin',  '1',  '127.0.0.1',  '2016-12-23 10:29:59'),
 ( '65', 'super', NULL, 'superadmin', '1', '127.0.0.1', '2017-02-10 15:28:56'),
-( '66', 'super', NULL, 'superadmin', '1', '127.0.0.1', '2017-02-17 17:15:09');
+( '66', 'super', NULL, 'superadmin', '1', '127.0.0.1', '2017-02-17 17:15:09'),
+( '67', 'super', NULL, 'superadmin', '1', '127.0.0.1', '2017-02-17 21:37:03');
 
 DROP TABLE IF EXISTS `rocket_user`;
 CREATE TABLE `rocket_user` ( 
@@ -287,6 +304,55 @@ CREATE TABLE `rocket_user_rocket_user_groups` (
 	, PRIMARY KEY (`rocket_user_id`, `rocket_user_group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
 
+
+DROP TABLE IF EXISTS `team`;
+CREATE TABLE `team` ( 
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	`order_index` INT UNSIGNED NOT NULL
+	, PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+
+INSERT INTO `team` (`id`, `order_index`) 
+VALUES ( '1',  '10'),
+( '2', '20');
+
+DROP TABLE IF EXISTS `team_member`;
+CREATE TABLE `team_member` ( 
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	`firstname` VARCHAR(32) NOT NULL, 
+	`lastname` VARCHAR(32) NOT NULL, 
+	`phone` VARCHAR(32) NULL, 
+	`email` VARCHAR(128) NULL, 
+	`foto` VARCHAR(255) NULL, 
+	`order_index` INT UNSIGNED NOT NULL, 
+	`team_id` INT NOT NULL
+	, PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+
+
+DROP TABLE IF EXISTS `team_member_t`;
+CREATE TABLE `team_member_t` ( 
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	`function` VARCHAR(255) NULL, 
+	`team_member_id` INT UNSIGNED NULL, 
+	`n2n_locale` VARCHAR(12) NULL
+	, PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+ALTER TABLE `team_member_t` ADD INDEX `team_member_t_index_1` (`team_member_id`);
+
+
+DROP TABLE IF EXISTS `team_t`;
+CREATE TABLE `team_t` ( 
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	`name` VARCHAR(32) NOT NULL, 
+	`team_id` INT UNSIGNED NOT NULL, 
+	`n2n_locale` VARCHAR(8) NOT NULL
+	, PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+
+INSERT INTO `team_t` (`id`, `name`, `team_id`, `n2n_locale`) 
+VALUES ( '1',  'Geschäftsleitung',  '1',  'de_CH'),
+( '2', 'Mitarbeiter', '2', 'de_CH');
 
 DROP TABLE IF EXISTS `tmpl_page_controller`;
 CREATE TABLE `tmpl_page_controller` ( 
