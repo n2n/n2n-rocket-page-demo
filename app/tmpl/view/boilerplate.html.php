@@ -27,10 +27,10 @@ use tmpl\model\TmplModel;
     <?php $html->headStart() ?>
     <?php $html->headEnd() ?>
     <?php $html->bodyStart() ?>
-        <nav class="navbar navbar-dark bg-inverse">
+        <nav class="navbar navbar-toggleable-sm navbar-dark bg-inverse">
             <?php $html->linkToContext(null, $html->getImageAsset('img/logo.png', 'Logo'),
                     array('class' => 'navbar-brand')) ?>
-            <?php $pageHtml->navigation(Nav::home(), array('class' => 'nav navbar-nav'), null,
+            <?php $pageHtml->navigation(Nav::home(), array('class' => 'navbar-nav'), null,
                     array('class' => 'nav-item'), array('class' => 'nav-link')) ?>
             <div id="lang-navi">
                 <?php $pageHtml->localeSwitch(array('class' => 'nav nav-inline'), array('class' => 'nav-item'),
