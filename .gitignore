@@ -21,4 +21,5 @@
 /vendor/
 /hangar/var/srv
 /hangar/var/tmp
+/hangar/var/log
 /public/files

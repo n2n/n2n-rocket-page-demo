@@ -2,6 +2,7 @@
     "menuGroups": {
         "Inhalt": {
             "page-page": "Seiten",
+            "portfolio-portfolio": "Portfolio",
             "team-team": "Teams"
         }
     }

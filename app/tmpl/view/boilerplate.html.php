@@ -52,7 +52,7 @@ use tmpl\model\TmplModel;
         
         <footer class="footer bg-inverse text-white">
         	<div class="container">
-				Created with love 2017 by n2n.rocks
+				Created with love 2017 by <a href="https://n2n.rocks" target="_blank">n2n.rocks</a>
         	</div>
 		</footer>
         

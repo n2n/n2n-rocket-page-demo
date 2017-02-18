@@ -1,0 +1,175 @@
+{
+    "specs": {
+        "portfolio-portfolio": {
+            "type": "entity",
+            "entity": "portfolio\\bo\\Portfolio",
+            "dataSourceName": null,
+            "label": "Portfolio",
+            "pluralLabel": "Portfolios",
+            "fields": {
+                "portfolioTs": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\translation\\TranslationEiField",
+                    "props": [],
+                    "label": "Portfolio Ts",
+                    "objectProperty": "portfolioTs",
+                    "entityProperty": "portfolioTs"
+                },
+                "fileImage": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\file\\FileEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "allowedExtensions": [],
+                        "extraThumbDimensions": [],
+                        "checkImageResourceMemory": true
+                    },
+                    "label": "Bild",
+                    "objectProperty": "fileImage",
+                    "entityProperty": "fileImage"
+                },
+                "published": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\date\\DateTimeEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "dateStyle": "medium",
+                        "timeStyle": "short"
+                    },
+                    "label": "Ver\u00f6ffentlicht",
+                    "objectProperty": "published",
+                    "entityProperty": "published"
+                },
+                "online": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\bool\\OnlineEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Online",
+                    "objectProperty": "online",
+                    "entityProperty": "online"
+                }
+            },
+            "commands": {
+                "addEiCommand": {
+                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\AddEiCommand",
+                    "props": []
+                },
+                "detailEiCommand": {
+                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DetailEiCommand",
+                    "props": []
+                },
+                "overviewEiCommand": {
+                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\OverviewEiCommand",
+                    "props": []
+                },
+                "editEiCommand": {
+                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\EditEiCommand",
+                    "props": []
+                },
+                "deleteEiCommand": {
+                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DeleteEiCommand",
+                    "props": []
+                }
+            },
+            "modificators": [],
+            "defaultMaskId": null
+        },
+        "portfolio-portfolio-t": {
+            "type": "entity",
+            "entity": "portfolio\\bo\\PortfolioT",
+            "dataSourceName": null,
+            "label": "Portfolio T",
+            "pluralLabel": "Portfolio Ts",
+            "fields": {
+                "name": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
+                    "label": "Name",
+                    "objectProperty": "name",
+                    "entityProperty": "name"
+                },
+                "pathPart": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\PathPartEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false,
+                        "maxlength": null,
+                        "basePropertyFieldId": "name",
+                        "allowEmpty": false,
+                        "critical": false
+                    },
+                    "label": "Path Part",
+                    "objectProperty": "pathPart",
+                    "entityProperty": "pathPart"
+                },
+                "description": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\ci\\ContentItemsEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false,
+                        "targetRemovalStrategy": "prevent"
+                    },
+                    "label": "Beschreibung",
+                    "objectProperty": "description",
+                    "entityProperty": "description"
+                }
+            },
+            "commands": [],
+            "modificators": [],
+            "defaultMaskId": null
+        },
+        "portfolio-portfolio-page-controller": {
+            "type": "entity",
+            "entity": "portfolio\\controller\\PortfolioPageController",
+            "dataSourceName": null,
+            "label": "Portfolio Modul",
+            "pluralLabel": "Portfolio Module",
+            "fields": [],
+            "commands": [],
+            "modificators": [],
+            "defaultMaskId": null
+        }
+    },
+    "commonEiMasks": [],
+    "menuItems": {
+        "portfolio-portfolio": []
+    }
+}
