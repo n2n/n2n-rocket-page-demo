@@ -4,7 +4,6 @@ namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
-use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use n2n\persistence\orm\annotation\AnnoManagedFile;
@@ -90,7 +89,7 @@ class TeamMember extends ObjectAdapter {
 	}
 
 	/**
-	 * @return \vag\bo\Reference[]
+	 * @return \team\bo\Reference[]
 	 */
 	public function getReferences() {
 		return $this->references;
@@ -101,7 +100,7 @@ class TeamMember extends ObjectAdapter {
 	}
 
 	/**
-	 * @return \vag\bo\Team
+	 * @return \team\bo\Team
 	 */
 	public function getTeam() {
 		return $this->team;
@@ -112,7 +111,7 @@ class TeamMember extends ObjectAdapter {
 	}
 
 	/**
-	 * @return \vag\bo\TeamMemberT[]
+	 * @return \team\bo\TeamMemberT[]
 	 */
 	public function getTeamMemberTs() {
 		return $this->teamMemberTs;
@@ -128,7 +127,7 @@ class TeamMember extends ObjectAdapter {
 	
 	/**
 	 * @param N2nLocale ...$n2nLocales
-	 * @return \vag\bo\TeamMemberT
+	 * @return \team\bo\TeamMemberT
 	 */
 	public function t(N2nLocale ...$n2nLocales) {
 		return Translator::findAny($this->teamMemberTs, ...$n2nLocales);

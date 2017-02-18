@@ -4,7 +4,6 @@ namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
-use n2n\persistence\orm\annotation\AnnoTable;
 use rocket\spec\ei\component\field\impl\translation\Translatable;
 use n2n\l10n\N2nLocale;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
@@ -36,7 +35,7 @@ class TeamT extends ObjectAdapter implements Translatable {
 	}
 	
 	/**
-	 * @return \vag\bo\Team
+	 * @return \team\bo\Team
 	 */
 	public function getTeam() {
 		return $this->team;

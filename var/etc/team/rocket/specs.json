@@ -6,14 +6,37 @@
             "dataSourceName": null,
             "label": "Team",
             "pluralLabel": "Teams",
+            "identityStringPattern": "{teamTs.name}",
             "fields": {
-                "orderIndex": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\OrderEiField",
+                "teamTs": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\translation\\TranslationEiField",
+                    "props": [],
+                    "label": "Team Ts",
+                    "objectProperty": "teamTs",
+                    "entityProperty": "teamTs"
+                },
+                "teamMembers": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\OneToManySelectEiField",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": true,
+                        "draftable": false
+                    },
+                    "label": "Team Mitglieder",
+                    "objectProperty": "teamMembers",
+                    "entityProperty": "teamMembers"
+                },
+                "orderIndex": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\OrderEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
                         "constant": false,
                         "readOnly": false,
                         "mandatory": false,
@@ -24,20 +47,6 @@
                     "label": "Order Index",
                     "objectProperty": "orderIndex",
                     "entityProperty": "orderIndex"
-                },
-                "teamMembers": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\OneToManySelectEiField",
-                    "props": [],
-                    "label": "Team Mitglieder",
-                    "objectProperty": "teamMembers",
-                    "entityProperty": "teamMembers"
-                },
-                "teamTs": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\translation\\TranslationEiField",
-                    "props": [],
-                    "label": "Team Ts",
-                    "objectProperty": "teamTs",
-                    "entityProperty": "teamTs"
                 }
             },
             "commands": {
@@ -71,51 +80,10 @@
             "dataSourceName": null,
             "label": "Team Mitglied",
             "pluralLabel": "Team Mitglieder",
+            "identityStringPattern": "{firstname} {lastname}, {email}",
             "fields": {
                 "firstname": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
-                    "props": [],
-                    "label": "Vorname",
-                    "objectProperty": "firstname",
-                    "entityProperty": "firstname"
-                },
-                "lastname": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
-                    "props": [],
-                    "label": "Vorname",
-                    "objectProperty": "lastname",
-                    "entityProperty": "lastname"
-                },
-                "phone": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
-                    "props": [],
-                    "label": "Telefon",
-                    "objectProperty": "phone",
-                    "entityProperty": "phone"
-                },
-                "email": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
-                    "props": [],
-                    "label": "E-Mail",
-                    "objectProperty": "email",
-                    "entityProperty": "email"
-                },
-                "foto": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\file\\FileEiField",
-                    "props": [],
-                    "label": "Foto",
-                    "objectProperty": "foto",
-                    "entityProperty": "foto"
-                },
-                "orderIndex": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\OrderEiField",
-                    "props": [],
-                    "label": "Order Index",
-                    "objectProperty": "orderIndex",
-                    "entityProperty": "orderIndex"
-                },
-                "team": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiField",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -125,11 +93,103 @@
                         "readOnly": false,
                         "mandatory": true,
                         "draftable": false,
-                        "targetRemovalStrategy": "prevent"
+                        "maxlength": null,
+                        "multiline": false
                     },
-                    "label": "Team",
-                    "objectProperty": "team",
-                    "entityProperty": "team"
+                    "label": "Vorname",
+                    "objectProperty": "firstname",
+                    "entityProperty": "firstname"
+                },
+                "lastname": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
+                    "label": "Nachname",
+                    "objectProperty": "lastname",
+                    "entityProperty": "lastname"
+                },
+                "phone": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
+                    "label": "Telefon",
+                    "objectProperty": "phone",
+                    "entityProperty": "phone"
+                },
+                "email": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
+                    "label": "E-Mail",
+                    "objectProperty": "email",
+                    "entityProperty": "email"
+                },
+                "foto": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\file\\FileEiField",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "allowedExtensions": [],
+                        "extraThumbDimensions": [],
+                        "checkImageResourceMemory": true
+                    },
+                    "label": "Foto",
+                    "objectProperty": "foto",
+                    "entityProperty": "foto"
+                },
+                "orderIndex": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\OrderEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "minValue": "-2147483648",
+                        "maxValue": "2147483647"
+                    },
+                    "label": "Order Index",
+                    "objectProperty": "orderIndex",
+                    "entityProperty": "orderIndex"
                 },
                 "teamMemberTs": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\translation\\TranslationEiField",
@@ -158,6 +218,23 @@
                     "label": "Team Member Ts",
                     "objectProperty": "teamMemberTs",
                     "entityProperty": "teamMemberTs"
+                },
+                "team": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiField",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "targetRemovalStrategy": "prevent"
+                    },
+                    "label": "Team",
+                    "objectProperty": "team",
+                    "entityProperty": "team"
                 }
             },
             "commands": {
@@ -194,7 +271,18 @@
             "fields": {
                 "function": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiField",
-                    "props": [],
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
                     "label": "Funktion",
                     "objectProperty": "function",
                     "entityProperty": "function"
@@ -202,10 +290,10 @@
                 "teamMember": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiField",
                     "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": true,
-                        "displayInAddView": true,
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
                         "constant": false,
                         "readOnly": false,
                         "mandatory": true,
@@ -219,10 +307,10 @@
                 "n2nLocale": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\l10n\\N2nLocaleEiField",
                     "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": true,
-                        "displayInAddView": true,
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
                         "constant": false,
                         "readOnly": false,
                         "mandatory": true,
@@ -265,10 +353,10 @@
                 "team": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiField",
                     "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": true,
-                        "displayInAddView": true,
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
                         "constant": false,
                         "readOnly": false,
                         "mandatory": true,
@@ -282,10 +370,10 @@
                 "n2nLocale": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\l10n\\N2nLocaleEiField",
                     "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": true,
-                        "displayInAddView": true,
+                        "displayInOverview": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
                         "constant": false,
                         "readOnly": false,
                         "mandatory": true,
@@ -294,6 +382,25 @@
                     "label": "N2n Locale",
                     "objectProperty": "n2nLocale",
                     "entityProperty": "n2nLocale"
+                }
+            },
+            "commands": [],
+            "modificators": [],
+            "defaultMaskId": null
+        },
+        "team-team-page-controller": {
+            "type": "entity",
+            "entity": "team\\controller\\TeamPageController",
+            "dataSourceName": null,
+            "label": "Team Modul",
+            "pluralLabel": "Team Module",
+            "fields": {
+                "team": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiField",
+                    "props": [],
+                    "label": "Team",
+                    "objectProperty": "team",
+                    "entityProperty": "team"
                 }
             },
             "commands": [],
@@ -308,7 +415,10 @@
                 "pluralLabel": "Teams",
                 "fields": [],
                 "commands": [],
-                "modificators": []
+                "modificators": [],
+                "partialControlOrder": [],
+                "overallControlOrder": [],
+                "entryControlOrder": []
             }
         }
     },

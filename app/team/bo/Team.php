@@ -4,7 +4,6 @@ namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
-use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use n2n\l10n\N2nLocale;
@@ -38,7 +37,7 @@ class Team extends ObjectAdapter {
 	}
 
 	/**
-	 * @return \vag\bo\TeamMember[]
+	 * @return \team\bo\TeamMember[]
 	 */
 	public function getTeamMembers() {
 		return $this->teamMembers;
@@ -49,7 +48,7 @@ class Team extends ObjectAdapter {
 	}
 	
 	/**
-	 * @return \vag\bo\TeamT[]
+	 * @return \team\bo\TeamT[]
 	 */
 	public function getTeamTs() {
 		return $this->teamTs;
@@ -61,12 +60,15 @@ class Team extends ObjectAdapter {
 
 	/**
 	 * @param N2nLocale ...$n2nLocales
-	 * @return \vag\bo\TeamT
+	 * @return \team\bo\TeamT
 	 */
 	public function t(N2nLocale ...$n2nLocales) {
 		return Translator::requireAny($this->teamTs, ...$n2nLocales);
 	}
 	
+	public function getTeamMemberCount() {
+		return count($this->teamMembers);
+	}
 	
 }
 
