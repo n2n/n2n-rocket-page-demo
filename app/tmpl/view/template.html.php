@@ -21,28 +21,26 @@ use tmpl\model\TmplModel;
 	$view->useTemplate('boilerplate.html');
 ?>
 
-<div class="container">
-	<?php if ($sideCols == 0) : ?>
-		<h1><?php $html->out($title) ?></h1>
-		
-		<?php $view->importContentView() ?>
-		
-	<?php else: ?>
-		<div class="row">
-			<?php if ($view->hasPanel(TmplModel::PANEL_NAME_LEFT)): ?>
-				<div class="col-sm-3">
-					<?php $view->importPanel(TmplModel::PANEL_NAME_LEFT) ?>
-				</div>
-			<?php endif ?>
-			<div class="<?php $html->out($mainColClass) ?>">
-				<h1><?php $html->out($title) ?></h1>
-				<?php $view->importContentView() ?>
+<?php if ($sideCols == 0) : ?>
+	<h1><?php $html->out($title) ?></h1>
+	
+	<?php $view->importContentView() ?>
+	
+<?php else: ?>
+	<div class="row">
+		<?php if ($view->hasPanel(TmplModel::PANEL_NAME_LEFT)): ?>
+			<div class="col-sm-3">
+				<?php $view->importPanel(TmplModel::PANEL_NAME_LEFT) ?>
 			</div>
-			<?php if ($view->hasPanel(TmplModel::PANEL_NAME_RIGHT)): ?>
-				<div class="col-sm-3">
-					<?php $view->importPanel(TmplModel::PANEL_NAME_RIGHT) ?>
-				</div>
-			<?php endif ?>
+		<?php endif ?>
+		<div class="<?php $html->out($mainColClass) ?>">
+			<h1><?php $html->out($title) ?></h1>
+			<?php $view->importContentView() ?>
 		</div>
-	<?php endif ?>
-</div>
+		<?php if ($view->hasPanel(TmplModel::PANEL_NAME_RIGHT)): ?>
+			<div class="col-sm-3">
+				<?php $view->importPanel(TmplModel::PANEL_NAME_RIGHT) ?>
+			</div>
+		<?php endif ?>
+	</div>
+<?php endif ?>

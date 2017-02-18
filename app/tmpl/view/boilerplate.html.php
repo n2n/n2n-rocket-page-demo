@@ -50,5 +50,11 @@ use tmpl\model\TmplModel;
         	<?php $view->importPanel(TmplModel::PANEL_NAME_BOTTOM) ?>
         <?php endif ?>
         
+        <footer class="footer bg-inverse text-white">
+        	<div class="container">
+				Created with love 2017 by n2n.rocks
+        	</div>
+		</footer>
+        
     <?php $html->bodyEnd() ?>
 </html>
