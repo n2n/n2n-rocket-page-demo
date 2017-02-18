@@ -8,9 +8,8 @@
 	$view = HtmlView::view($this);
 	$html = HtmlView::html($view);
 	
-	$pageHtml = new PageHtmlBuilder($view);
 	
-	$view->useTemplate('\tmpl\view\template.html'); 
+	$view->useTemplate('inc\contactTemplate.html'); 
 	
 ?>
 
@@ -18,8 +17,3 @@
 Das Formular kommt hierhin
 
 
-<?php $view->panelStart(TmplModel::PANEL_NAME_RIGHT) ?>
-	
-	<?php $pageHtml->contentItems('aside') ?>
-
-<?php $view->panelEnd() ?>
