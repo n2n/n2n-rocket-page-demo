@@ -9,7 +9,7 @@
 class TmplPageController extends PageController {
 	private static function _annos(AnnoInit $ai) {
 		$ai->m('startPage', new AnnoPage(), new AnnoPageCiPanels('hero', 'main'));
-		$ai->m('standardPage', new AnnoPage(), new AnnoPageCiPanels('main'));
+		$ai->m('standardPage', new AnnoPage(), new AnnoPageCiPanels('main', 'aside'));
 	}
 
 	public function startPage() {

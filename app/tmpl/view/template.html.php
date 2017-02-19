@@ -8,6 +8,7 @@ use tmpl\model\TmplModel;
 	$html = HtmlView::html($view);
 	
 	$title = $view->getParam('title', false);
+	$smallContainer = $view->getParam('smallContainer', false, false);
 	
 	if (!$title) {
 		$pageHtml = new PageHtmlBuilder($view);
@@ -21,7 +22,7 @@ use tmpl\model\TmplModel;
 	$view->useTemplate('boilerplate.html');
 ?>
 
-<?php if ($sideCols == 0) : ?>
+<?php if (!$smallContainer) : ?>
 	<h1><?php $html->out($title) ?></h1>
 	
 	<?php $view->importContentView() ?>

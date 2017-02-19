@@ -28,7 +28,7 @@ class TmplModel {
 				break;
 			default:
 				// keine Zusatzspalten --> Klasse wird nicht gebraucht
-				$mainColClass = null;
+				$mainColClass = 'col-md-8 offset-md-1';
 		}
 		return $mainColClass;
 	}
