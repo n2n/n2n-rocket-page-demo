@@ -25,7 +25,8 @@ class PortfolioController extends ControllerAdapter {
 	}
 	
 	public function detail($pathPart) {
-		$portfolio = $this->portfolioDao->getPortfolioByPathPart($pathPart);
+		$locale = $this->getRequest()->getN2nLocale();
+		$portfolio = $this->portfolioDao->getPortfolioByPathPart($pathPart, $locale);
 		
 		$this->forward('..\view\portfolio.html', array('portfolio' => $portfolio));
 	}

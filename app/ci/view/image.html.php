@@ -12,7 +12,7 @@
  
 ?>
 <figure class="ci ci-image">
-    <?php $html->image($image->getFileImage(), ThSt::prop(600, 400)) ?>
+    <?php $html->image($image->getFileImage(), ThSt::prop(750, 500), array('class' => 'img-fluid rounded')) ?>
     <?php if (null !== ($caption = $image->getCaption())): ?>
         <figcaption><?php $html->out($caption) ?></figcaption>
     <?php endif; ?>

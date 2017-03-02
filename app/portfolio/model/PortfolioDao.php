@@ -5,6 +5,7 @@ namespace portfolio\model;
 use n2n\context\RequestScoped;
 use n2n\persistence\orm\EntityManager;
 use portfolio\bo\Portfolio;
+use n2n\l10n\N2nLocale;
 
 class PortfolioDao implements RequestScoped {
 	
@@ -26,8 +27,8 @@ class PortfolioDao implements RequestScoped {
 	 * @param string $pathPart
 	 * @return \portfolio\bo\Portfolio
 	 */
-	public function getPortfolioByPathPart($pathPart) {
-		return $this->em->createSimpleCriteria(Portfolio::getClass(), array('portfolioTs.pathPart' => $pathPart))
-				->toQuery()->fetchSingle();
+	public function getPortfolioByPathPart($pathPart, N2nLocale $locale) {
+		return $this->em->createSimpleCriteria(Portfolio::getClass(), array('portfolioTs.pathPart' => $pathPart, 
+				'portfolioTs.n2nLocale' => $locale))->toQuery()->fetchSingle();
 	}
 }

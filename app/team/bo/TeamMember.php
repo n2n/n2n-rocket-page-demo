@@ -11,12 +11,14 @@ use n2n\io\managed\File;
 use n2n\persistence\orm\CascadeType;
 use n2n\l10n\N2nLocale;
 use rocket\spec\ei\component\field\impl\translation\Translator;
+use news\bo\NewsArticle;
 
 class TeamMember extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
 		$ai->p('team', new AnnoManyToOne(Team::getClass()));
 		$ai->p('foto', new AnnoManagedFile());
 		$ai->p('teamMemberTs', new AnnoOneToMany(TeamMemberT::getClass(), 'teamMember', CascadeType::ALL, null, true));
+		$ai->p('newsArticles', new AnnoOneToMany(NewsArticle::getClass(), 'author', CascadeType::ALL));
 	}
 	
 	private $id;
@@ -28,6 +30,7 @@ class TeamMember extends ObjectAdapter {
 	private $orderIndex;
 	private $team;
 	private $teamMemberTs;
+	private $newsArticles;
 	
 	public function getId() {
 		return $this->id;
@@ -119,6 +122,20 @@ class TeamMember extends ObjectAdapter {
 
 	public function setTeamMemberTs(\ArrayObject $teamMemberTs) {
 		$this->teamMemberTs = $teamMemberTs;
+	}
+	
+	/**
+	 * @return NewsArticle[]
+	 */
+	public function getNewsArticles() {
+		return $this->newsArticles;
+	}
+	
+	/**
+	 * @param \ArrayObject $newsArticles
+	 */
+	public function setNewsArticles(\ArrayObject $newsArticles) {
+		$this->newsArticles = $newsArticles;
 	}
 
 	/**

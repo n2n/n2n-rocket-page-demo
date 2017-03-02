@@ -119,9 +119,9 @@
                 "pathPart": {
                     "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\PathPartEiField",
                     "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": false,
-                        "displayInEditView": false,
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
                         "displayInAddView": true,
                         "constant": false,
                         "readOnly": false,

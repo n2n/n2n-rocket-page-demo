@@ -17,6 +17,7 @@ class ContactPageController extends PageController {
 	public function getRecipient() {
 		return $this->recipient;
 	}
+	
 	public function setRecipient($recipient) {
 		$this->recipient = $recipient;
 		return $this;

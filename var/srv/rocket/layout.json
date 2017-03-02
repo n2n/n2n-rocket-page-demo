@@ -4,6 +4,11 @@
             "page-page": "Seiten",
             "portfolio-portfolio": "Portfolio",
             "team-team": "Teams"
+        },
+        "News": {
+       		"news-news-article": "News Artikel",
+       		"news-news-comment": "News Kommentare",
+       		"news-news-category": "News Kategorien"
         }
     }
 }

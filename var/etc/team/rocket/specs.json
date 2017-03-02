@@ -235,6 +235,13 @@
                     "label": "Team",
                     "objectProperty": "team",
                     "entityProperty": "team"
+                },
+                "newsArticles": {
+                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\OneToManySelectEiField",
+                    "props": [],
+                    "label": "News Articles",
+                    "objectProperty": "newsArticles",
+                    "entityProperty": "newsArticles"
                 }
             },
             "commands": {

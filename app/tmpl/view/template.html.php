@@ -9,11 +9,14 @@ use tmpl\model\TmplModel;
 	
 	$title = $view->getParam('title', false);
 	$smallContainer = $view->getParam('smallContainer', false, false);
+	$showTitle = $view->getParam('showTitle', false, true);
 	
 	if (!$title) {
 		$pageHtml = new PageHtmlBuilder($view);
 		$title = $pageHtml->getTitle();
 	}
+	
+	
 	
 	// zähle die Zusatzspalten
 	$sideCols = TmplModel::getNumAsideCols($view);
@@ -23,7 +26,9 @@ use tmpl\model\TmplModel;
 ?>
 
 <?php if (!$smallContainer) : ?>
-	<h1><?php $html->out($title) ?></h1>
+	<?php if ($showTitle): ?>
+		<h1 class="display-3"><?php $html->out($title) ?></h1>
+	<?php endif ?>
 	
 	<?php $view->importContentView() ?>
 	
@@ -35,7 +40,9 @@ use tmpl\model\TmplModel;
 			</div>
 		<?php endif ?>
 		<div class="<?php $html->out($mainColClass) ?>">
-			<h1><?php $html->out($title) ?></h1>
+			<?php if ($showTitle): ?>
+				<h1 class="display-3"><?php $html->out($title) ?></h1>
+			<?php endif ?>
 			<?php $view->importContentView() ?>
 		</div>
 		<?php if ($view->hasPanel(TmplModel::PANEL_NAME_RIGHT)): ?>

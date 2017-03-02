@@ -11,12 +11,14 @@ use n2n\persistence\orm\annotation\AnnoOneToMany;
 use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
 use n2n\persistence\orm\CascadeType;
 use n2n\persistence\orm\annotation\AnnoOrderBy;
+use page\annotation\AnnoPageCiPanels;
 
 class PortfolioT extends ObjectAdapter implements Translatable {
 	private static function _annos(AnnoInit $ai) {
 		$ai->p('portfolio', new AnnoManyToOne(Portfolio::getClass()));
 		$ai->p('description', new AnnoOneToMany(ContentItem::getClass(), null, CascadeType::ALL),
 				new AnnoOrderBy(array('orderIndex' => 'ASC')));
+		
 	}
 	private $id;
 	private $name;

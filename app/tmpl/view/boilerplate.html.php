@@ -6,10 +6,20 @@
 	use page\ui\nav\Nav;
 	use n2n\impl\web\ui\view\html\HtmlBuilderMeta;
 use tmpl\model\TmplModel;
+use n2n\l10n\N2nLocale;
+use page\model\nav\murl\MurlPage;
 	
 	$view = HtmlView::view($this);
 	$html = HtmlView::html($view);
 	$request = HtmlView::request($view);
+	
+	/*$lang = $request->getN2nLocale();
+	
+	if ($lang !== N2nLocale::getDefault()) {
+		$context_link = $lang;
+	} else {
+		$context_link = 'null';
+	}*/
 	
 	$pageHtml = new PageHtmlBuilder($view);
 	$pageHtml->meta()->applyMeta();
@@ -17,9 +27,6 @@ use tmpl\model\TmplModel;
 	$html->meta()->addMeta(array('charset' => N2N::CHARSET));
 	
 	$html->meta()->addCss('css/style.css');
-
-	// CSS File für individuelle Stile
-	$html->meta()->addCss('css/styles.css');
 				 
 ?>
 <!doctype html>
@@ -28,7 +35,7 @@ use tmpl\model\TmplModel;
     <?php $html->headEnd() ?>
     <?php $html->bodyStart() ?>
         <nav class="navbar navbar-toggleable-sm navbar-dark bg-inverse">
-            <?php $html->linkToContext(null, $html->getImageAsset('img/logo.png', 'Logo'),
+            <?php $html->link(MurlPage::home(), $html->getImageAsset('img/logo.png', 'Logo'),
                     array('class' => 'navbar-brand')) ?>
             <?php $pageHtml->navigation(Nav::home(), array('class' => 'navbar-nav'), null,
                     array('class' => 'nav-item'), array('class' => 'nav-link')) ?>
@@ -42,7 +49,7 @@ use tmpl\model\TmplModel;
         	<?php $view->importPanel(TmplModel::PANEL_NAME_TOP) ?>
         <?php endif ?>
     
-      	<div class="container">
+      	<div class="container main-container">
 	        <?php $view->importContentView() ?>
       	</div>
           

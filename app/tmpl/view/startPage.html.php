@@ -7,7 +7,7 @@
 	$view = HtmlView::view($view);
 	$pageHtml = new PageHtmlBuilder($view);
 	 
-	$view->useTemplate('template.html', array('title' => $pageHtml->getTitle()));
+	$view->useTemplate('template.html', array('showTitle' => false));
 ?>
 
 <?php $view->panelStart(TmplModel::PANEL_NAME_TOP) ?>

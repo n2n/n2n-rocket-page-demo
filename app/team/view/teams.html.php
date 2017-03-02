@@ -33,12 +33,12 @@
 			<div class="col-sm-4">
 				<div class="card team-member">
 					<?php if (null !== $foto = $member->getFoto()): ?>
-						<?php $html->image($foto, null, array('class' => 'card-img-top')) ?>
+						<?php $html->image($foto, null, array('class' => 'card-img-top img-fluid')) ?>
 					<?php endif ?>
 					<div class="card-block">
 						<h3 class="card-title">
 							<?php $html->out($member->getFullName()) ?>
-							<small><?php $html->out($member->t()->getFunction()) ?></small>
+							<small><?php $html->out($member->t($n2nLocale)->getFunction()) ?></small>
 						</h3>
 						<?php if (null !== $email = $member->getEmail()): ?>
 							<?php $html->linkEmail($email, $html->getText('email')) ?>
