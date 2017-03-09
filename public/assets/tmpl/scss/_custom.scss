@@ -2,3 +2,9 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+
+$font-size-h1: 5rem;
+$headings-font-weight: 300;
+
+$brand-primary: #ED8207;
+$navbar-inverse-active-color: $brand-primary;

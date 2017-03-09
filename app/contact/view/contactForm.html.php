@@ -37,7 +37,7 @@ use contact\model\ContactForm;
 		</div>
 		<div class="form-group">
 			<!-- with 'getL10nText' the text can also be translated like the labels in the .ini files (check ContactForm model) -->
-			<?php $formHtml->buttonSubmit('send', $view->getL10nText('send'), array('class' => 'btn btn-primary')) ?>
+			<?php $formHtml->buttonSubmit('send', $view->getL10nText('send'), array('class' => 'btn btn-primary', 'role' => 'button')) ?>
 		</div>
 	<?php $formHtml->close() ?>
 </div>

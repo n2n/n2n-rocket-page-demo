@@ -48,26 +48,42 @@ class CiAttachment extends ContentItem {
 	}
 
 	public function createUiComponent(HtmlView $view) {
-		$div = new HtmlElement('div', array('class' => 'ci ci-attachment'));
-		
-		$title = $this->name ? $this->name : $this->file->getOriginalName();
-		$div->appendContent(new HtmlElement('h3', null, $this->getTitle()));
-		
-		if (null !== $this->description) {
-			$div->appendContent(new HtmlElement('p', null, $this->description));
-		}
-		
-	 	$div->appendContent(new HtmlElement('span', array('class' => 'glyphicon glyphicon-download'), ''));
-	 	if ($this->file->isValid()) {
-    		$div->appendContent(new HtmlElement('a', array('href' => $view->buildUrlStr($this->file, false), 
-    				'target' => '_blank'), $this->file->getOriginalName()));
-	 	}
-		return $div;
+		return $view->getImport('\ci\view\attachment.html', array('attachment' => $this));
 	}
 	
-	private function getTitle() {
+	public function getTitle() {
 		if ($this->name) return $this->name;
 		return $this->file->getOriginalName();
+	}
+	
+	public function getFaClassName() {
+		if (!$this->file) return 'fa-file-o';
+		
+		switch ($this->file->getOriginalExtension()) {
+			case 'jpg':
+			case 'png':
+			case 'gif':
+			case 'jpeg':
+				return 'fa-file-image-o';
+			case 'zip':
+			case '7z':
+				return 'fa-archive-o';
+			case 'xls':
+			case 'xlsx':
+				return 'fa-file-excel-o';
+			case 'doc':
+			case 'docx':
+				return 'fa-file-word-o';
+			case 'ppt':
+			case 'pptx':
+				return 'fa-file-powerpoint-o';
+			case 'mp3':
+				return 'fa-file-audio-o';
+			case 'pdf':
+				return 'fa-file-pdf-o';
+			default:
+				return 'fa-file-o';
+		}
 	}
 
 }

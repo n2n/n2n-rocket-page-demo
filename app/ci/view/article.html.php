@@ -16,7 +16,7 @@ $htmlWysiwyg = new WysiwygHtmlBuilder($view);
 ?>
 <article class="ci ci-article row">
     <div class="col-sm-4">
-        <?php $html->image($article->getFileImage(), ThSt::crop(400, 300), array('class' => 'img-fluid')) ?>
+        <?php $html->image($article->getFileImage(), ThSt::crop(400, 300), array('class' => 'img-fluid rounded')) ?>
     </div>
     <div class="col-sm-8">
         <h2><?php $html->out($article->getTitle()) ?></h2>

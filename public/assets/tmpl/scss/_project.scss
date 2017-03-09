@@ -1,0 +1,90 @@
+/**
+ * General
+ */
+.card {
+	margin-bottom: $spacer*2;
+}
+
+small {
+	font-weight: inherit;
+}
+
+@include media-breakpoint-down(sm) {
+	html {
+		font-size: 90%;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.111rem;
+	}
+
+	footer p {
+		font-size: 1rem;
+	}
+}
+
+
+ /**
+  * News
+  */
+ article.news-article-overview {
+	 margin-bottom: 35px;
+ }
+
+ .news-content {
+	 margin-top: 10px;
+ }
+
+ img.news-article-img {
+	 margin-bottom: 50px;
+ }
+
+ .news-author {
+	 margin-bottom: 3rem;
+ }
+
+ .news-comments {
+	 margin-top: 4rem;
+ }
+
+.news-comment {
+	 margin-top: 30px;
+}
+
+.news-sidebar {
+   article {
+	   margin-top: 30px;
+	   padding-left: 10px;
+	   border-left: 2px solid $brand-primary;
+   }
+}
+
+ /**
+  * Team
+  */
+ .team {
+	 margin-top: 20px;
+	 margin-bottom: 40px;
+ }
+
+ @include media-breakpoint-between(sm, md) {
+	.team-member h3 {
+		font-size: 1.5rem;
+	}
+ }
+
+/**
+ * Portfolio Styles
+ */
+
+/**
+ * Contact
+ */
+
+#map {
+	height: 500px;
+}

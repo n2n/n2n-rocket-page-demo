@@ -23,11 +23,12 @@ use n2n\impl\web\ui\view\html\img\Mimg;
 	
 		<div class="col-sm-6 col-lg-4">
 			<div class="portfolio card">
+			
+				<?php if (null !== ($fileImage = $portfolio->getFileImage())): ?> 
+					<?php $html->image($fileImage, ThSt::crop(543, 362), array('class' => 'img-fluid card-img-top', 'alt' => 'Portfolio picture')); ?>
+				<?php endif ?>
+				
 				<div class="card-block">
-					<?php if (null !== ($fileImage = $portfolio->getFileImage())): ?> 
-						<?php $html->image($fileImage, ThSt::crop(503, 335), array('class' => 'img-fluid card-img-top', 'alt' => 'Portfolio picture')); ?>
-					<?php endif ?>
-
 					<h3 class="card-title"><?php $html->out($portfolio->t($n2nLocale)->getName())?></h3>
 					<?php $html->linkToController($portfolio->t($n2nLocale)->getPathPart(), $html->getText('more'), 
 						array('class' => 'btn btn-primary')) ?>

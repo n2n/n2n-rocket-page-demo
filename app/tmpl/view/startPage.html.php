@@ -20,3 +20,9 @@
 <?php $view->panelEnd() ?>
  
 <?php $pageHtml->contentItems('main') ?>
+
+<?php $view->panelStart(TmplModel::PANEL_NAME_RIGHT); ?>
+
+	<?php $view->import('\news\view\inc\newsBox.html') ?>
+	
+<?php $view->panelEnd() ?>

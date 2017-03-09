@@ -20,11 +20,11 @@ class TmplModel {
 		switch ($sideCols) {
 			case 2:
 				// zwei Zusatzspalten --> Hauptspalte ist schmal
-				$mainColClass = 'col-sm-6';
+				$mainColClass = 'col-md-6';
 				break;
 			case 1:
 				// eine Zusatzspalte --> Hauptspalte ist mittel
-				$mainColClass = 'col-sm-9';
+				$mainColClass = 'col-md-9';
 				break;
 			default:
 				// keine Zusatzspalten --> Klasse wird nicht gebraucht

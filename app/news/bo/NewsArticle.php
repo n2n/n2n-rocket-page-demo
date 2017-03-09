@@ -38,7 +38,10 @@ class NewsArticle extends ObjectAdapter {
 	private $newsComments;
 	private $newsCategories;
 	
-
+	// if published date is not set by user, it will take the current date
+	public function __construct() {
+		$this->published = new \DateTime();
+	}
 	
 	public function getId() {
 		return $this->id;

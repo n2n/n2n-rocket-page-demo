@@ -6,9 +6,9 @@
  */
 
 // Core variables and mixins
+@import "custom";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-@import "custom";
 
 // Reset and dependencies
 @import "bootstrap/normalize";
@@ -54,6 +54,7 @@
 
 @import "navigation";
 @import "layout";
+@import "project";
 
 // Utility classes
 @import "bootstrap/utilities";

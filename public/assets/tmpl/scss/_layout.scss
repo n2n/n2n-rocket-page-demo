@@ -1,12 +1,60 @@
 .main-container {
 	padding-top: 40px;
 	padding-bottom: 40px;
+
+	.ci {
+		margin-bottom: 3rem;
+	}
 }
 
-/**
- * Portfolio Styles
- */
- 
-.portfolio {
-	margin-bottom: $spacer*2;
+.container h1 {
+	margin-bottom: 30px;
+}
+
+#page-footer {
+	padding: 70px 0;
+	font-size: $font-size-sm;
+}
+
+.social-links {
+   .outer,
+   .github .inner {
+	   color: $white;
+   }
+
+   .inner {
+	   color: $gray-dark;
+   }
+
+   .github > a:hover > .inner {
+	   color: rgba($black, 0.8);
+   }
+
+   .facebook > a:hover {
+	   > .outer {
+		   color: #3b5998;
+	   }
+
+	   > .inner {
+		   color: $white;
+	   }
+   }
+
+   .twitter > a:hover {
+	   > .outer {
+		   color: #1da1f2;
+	   }
+
+	   > .inner {
+		   color: $white;
+	   }
+   }
+}
+
+@include media-breakpoint-down(sm) {
+	#page-footer .social-links {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: left !important;
+	}
 }

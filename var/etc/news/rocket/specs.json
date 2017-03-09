@@ -96,10 +96,10 @@
                         "displayInAddView": true,
                         "constant": false,
                         "readOnly": false,
-                        "mandatory": false,
+                        "mandatory": true,
                         "draftable": false,
                         "dateStyle": "medium",
-                        "timeStyle": "short"
+                        "timeStyle": "none"
                     },
                     "label": "Published",
                     "objectProperty": "published",

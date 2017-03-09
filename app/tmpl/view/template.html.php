@@ -23,11 +23,12 @@ use tmpl\model\TmplModel;
 	$mainColClass = TmplModel::getMainColClass($sideCols);
 	
 	$view->useTemplate('boilerplate.html');
+	
 ?>
 
-<?php if (!$smallContainer) : ?>
+<?php if ($sideCols == 0 && $smallContainer == false) : ?>
 	<?php if ($showTitle): ?>
-		<h1 class="display-3"><?php $html->out($title) ?></h1>
+		<h1><?php $html->out($title) ?></h1>
 	<?php endif ?>
 	
 	<?php $view->importContentView() ?>
@@ -35,18 +36,20 @@ use tmpl\model\TmplModel;
 <?php else: ?>
 	<div class="row">
 		<?php if ($view->hasPanel(TmplModel::PANEL_NAME_LEFT)): ?>
-			<div class="col-sm-3">
+			<div class="col-md-3">
 				<?php $view->importPanel(TmplModel::PANEL_NAME_LEFT) ?>
 			</div>
 		<?php endif ?>
 		<div class="<?php $html->out($mainColClass) ?>">
+		
 			<?php if ($showTitle): ?>
-				<h1 class="display-3"><?php $html->out($title) ?></h1>
+				<h1><?php $html->out($title) ?></h1>
 			<?php endif ?>
 			<?php $view->importContentView() ?>
+			
 		</div>
 		<?php if ($view->hasPanel(TmplModel::PANEL_NAME_RIGHT)): ?>
-			<div class="col-sm-3">
+			<div class="col-md-3">
 				<?php $view->importPanel(TmplModel::PANEL_NAME_RIGHT) ?>
 			</div>
 		<?php endif ?>

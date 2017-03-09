@@ -3,6 +3,7 @@
 	use n2n\web\ui\view\View;
 	use team\bo\Team;
 	use team\bo\TeamMember;
+use n2n\io\managed\img\impl\ThSt;
 
 	$view = HtmlView::view($this);
 	$html = HtmlView::html($view);
@@ -12,7 +13,7 @@
 	
 	$teams = $view->getParam('teams');
 	
-	$view->useTemplate('\tmpl\view\template.html');
+	$view->useTemplate('\tmpl\view\template.html', array('showFull' => true));
 	
 ?>
 
@@ -33,7 +34,7 @@
 			<div class="col-sm-4">
 				<div class="card team-member">
 					<?php if (null !== $foto = $member->getFoto()): ?>
-						<?php $html->image($foto, null, array('class' => 'card-img-top img-fluid')) ?>
+						<?php $html->image($foto, ThSt::crop(543, 407), array('class' => 'card-img-top img-fluid')) ?>
 					<?php endif ?>
 					<div class="card-block">
 						<h3 class="card-title">

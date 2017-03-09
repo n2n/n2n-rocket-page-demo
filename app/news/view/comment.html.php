@@ -33,7 +33,9 @@
 	</div>
 	<div class="form-group">
 		<!-- with 'getL10nText' the text can also be translated like the labels in the .ini files (check ContactForm model) -->
-		<?php $html->linkToController($commentArticle->getUrlPart(), $html->getText('cancel'), array('class' => 'btn btn-secondary')) ?>
-		<?php $formHtml->buttonSubmit('save', $view->getL10nText('comment_form_submit_label'), array('class' => 'btn btn-primary')) ?>
+		<?php $html->linkToController($commentArticle->getUrlPart(), $html->getText('cancel'), 
+				array('class' => 'btn btn-secondary')) ?>
+		<?php $formHtml->buttonSubmit('save', $view->getL10nText('comment_form_submit_label'), 
+				array('class' => 'btn btn-primary', 'role' => 'button')) ?>
 	</div>
 <?php $formHtml->close() ?>

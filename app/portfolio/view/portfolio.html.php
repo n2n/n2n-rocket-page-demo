@@ -17,12 +17,14 @@ use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
 	
 	$n2nLocale = $request->getN2nLocale();
 	
-	$view->useTemplate('\tmpl\view\template.html', array('title' => $portfolio->t($n2nLocale)->getName(), 'smallContainer' => true));
+	$view->useTemplate('\tmpl\view\template.html', array('title' => $portfolio->t($n2nLocale)->getName(), 
+			'smallContainer' => true));
 	
 ?>
 
 <div>
-	<?php foreach ($portfolio->t($view->getN2nLocale())->getDescription() as $contentItem): $view->assert($contentItem instanceof ContentItem) ?>
+	<?php foreach ($portfolio->t($view->getN2nLocale())->getDescription() as $contentItem): 
+	$view->assert($contentItem instanceof ContentItem) ?>
 		<?php if ($contentItem->getPanel() !== 'main') continue ?>
 		<?php $html->out($contentItem->createUiComponent($view)) ?>
 	<?php endforeach ?>

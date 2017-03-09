@@ -16,11 +16,13 @@ use n2n\impl\web\ui\view\html\HtmlBuilderMeta;
 	$apiKey = ''; // Insert your registered API Key from Google here
 	
 	if ($apiKey) {
-		// JS Code for Google Maps, edit $mapjs to get your desired settings
+		// JS Code for Google Maps, edit $mapjs to get your desired settings (You will have to edit the var uluru to
+		// get your place, and maybe the zoom level at the var map
 		$mapjs = "function initMap() {
-				var uluru = {lat: -25.363, lng: 131.044};
+				var uluru = {lat: 47.500214, lng: 8.729323}; 
 				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom: 4,
+					zoom: 15,
+					scrollwheel: false,
 					center: uluru
 				});
 				var marker = new google.maps.Marker({
@@ -40,10 +42,10 @@ use n2n\impl\web\ui\view\html\HtmlBuilderMeta;
 <?php $view->importContentView() ?>
 
 <?php $view->panelStart(TmplModel::PANEL_NAME_RIGHT) ?>
-	
 	<?php $pageHtml->contentItems('aside') ?>
 
 <?php $view->panelEnd() ?>
+
 
 <?php $view->panelStart(TmplModel::PANEL_NAME_BOTTOM) ?>
 	<?php if ($apiKey) : ?>

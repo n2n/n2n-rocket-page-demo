@@ -17,9 +17,19 @@ class NewsDao implements RequestScoped {
 	/**
 	 * @return NewsArticle[]
 	 */
-	public function getOnlineNewsArticles(N2nLocale $lang) {
+	public function getLatestNewsArticles(N2nLocale $locale, $limit = 3) {
+		$criteria = $this->em->createSimpleCriteria(NewsArticle::getClass(),
+				array('online' => true, 'n2nLocale' => $locale), 
+				array('published' => 'DESC'), $limit);
+		return $criteria->toQuery()->fetchArray();
+	}
+	
+	/**
+	 * @return NewsArticle[]
+	 */
+	public function getOnlineNewsArticles(N2nLocale $locale) {
 		$criteria = $this->em->createSimpleCriteria(NewsArticle::getClass(), 
-				array('online' => true, 'n2nLocale' => $lang), array('id' => 'DESC'));
+				array('online' => true, 'n2nLocale' => $locale), array('published' => 'DESC'));
 		return $criteria->toQuery()->fetchArray();
 	}
 	

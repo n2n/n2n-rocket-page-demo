@@ -6,6 +6,7 @@
 /public/assets/n2n-impl-web-dispatch/
 /public/assets/n2n-impl-web-ui/
 /public/assets/n2nutil-jquery/
+/public/assets/n2nutil-bootstrap/
 /public/assets/rocket/
 /public/assets/page/
 /var/bak/rocket/
@@ -14,6 +15,7 @@
 /var/etc/n2n-impl-web-dispatch/
 /var/etc/n2n-impl-web-ui/
 /var/etc/n2nutil-jquery/
+/var/etc/n2nutil-bootstrap/
 /var/etc/rocket/
 /var/etc/page/
 /var/log/

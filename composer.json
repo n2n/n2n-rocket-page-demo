@@ -15,7 +15,8 @@
         "n2n/n2n-impl-web-dispatch": "master-dev",
 		"n2n/n2n-impl-web-ui": "master-dev",
         "n2n/page": "master-dev",
-        "n2n/rocket": "master-dev"
+        "n2n/rocket": "master-dev",
+        "n2n/n2nutil-bootstrap": "master-dev"
     },
     "type": "project"
 }
