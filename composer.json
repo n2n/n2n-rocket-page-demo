@@ -1,22 +1,25 @@
 {
-    "description": "n2n demo website installable by Composer",
-    "extra": [],
-    "minimum-stability": "dev",
-    "name": "n2n/demo",
-    "prefer-stable": true,
-    "require": {
-    	"php": ">=7.0",
-        "n2n/n2n": "master-dev",
-        "n2n/n2n-batch": "master-dev",
-        "n2n/n2n-context": "master-dev",
-        "n2n/n2n-mail": "master-dev",
-        "n2n/n2n-impl-persistence-meta": "master-dev",
-        "n2n/n2n-impl-persistence-orm": "master-dev",
-        "n2n/n2n-impl-web-dispatch": "master-dev",
+	"description": "n2n demo website installable by Composer",
+	"extra": [],
+	"minimum-stability": "dev",
+	"name": "n2n/demo",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.0",
+		"n2n/n2n": "master-dev",
+		"n2n/n2n-batch": "master-dev",
+		"n2n/n2n-context": "master-dev",
+		"n2n/n2n-mail": "master-dev",
+		"n2n/n2n-impl-persistence-meta": "master-dev",
+		"n2n/n2n-impl-persistence-orm": "master-dev",
+		"n2n/n2n-impl-web-dispatch": "master-dev",
 		"n2n/n2n-impl-web-ui": "master-dev",
-        "n2n/page": "master-dev",
-        "n2n/rocket": "master-dev",
-        "n2n/n2nutil-bootstrap": "master-dev"
-    },
-    "type": "project"
+		"n2n/page": "master-dev",
+		"n2n/rocket": "master-dev",
+		"n2n/n2nutil-bootstrap": "master-dev"
+	},
+	"require-dev": {
+		"n2n/hangar" : "master-dev"
+	},
+	"type": "project"
 }
