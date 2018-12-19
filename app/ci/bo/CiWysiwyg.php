@@ -4,7 +4,7 @@ namespace ci\bo;
 use n2n\impl\web\ui\view\html\HtmlView;
 use rocket\spec\ei\component\field\impl\string\wysiwyg\WysiwygHtmlBuilder;
 use n2n\impl\web\ui\view\html\HtmlElement;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 
 class CiWysiwyg extends ContentItem {
 
