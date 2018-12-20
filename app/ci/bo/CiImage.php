@@ -1,11 +1,11 @@
 <?php
 namespace ci\bo;
 
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoManagedFile;
 use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\io\managed\File;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 
 class CiImage extends ContentItem {
 	private static function _annos(AnnoInit $ai) {

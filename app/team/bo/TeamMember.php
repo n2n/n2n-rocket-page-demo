@@ -10,7 +10,7 @@ use n2n\persistence\orm\annotation\AnnoManagedFile;
 use n2n\io\managed\File;
 use n2n\persistence\orm\CascadeType;
 use n2n\l10n\N2nLocale;
-use rocket\spec\ei\component\field\impl\translation\Translator;
+use rocket\impl\ei\component\prop\translation\Translator;
 use news\bo\NewsArticle;
 
 class TeamMember extends ObjectAdapter {

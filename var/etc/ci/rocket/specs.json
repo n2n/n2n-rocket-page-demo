@@ -8,7 +8,7 @@
             "pluralLabel": "Freitexte",
             "fields": {
                 "contentHtml": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\wysiwyg\\WysiwygEiField",
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\cke\\CkeEiProp",
                     "props": {
                         "displayInOverview": false,
                         "displayInDetailView": true,
@@ -20,9 +20,9 @@
                         "draftable": false,
                         "mode": "normal",
                         "linkConfig": [
-                            "page\\model\\PageWysiwygLinkConfig"
+                            "page\\model\\PageCkeLinkProvider"
                         ],
-                        "cssConfig": "tmpl\\model\\CkeCssConfig",
+                        "cssConfig": "tmpl\\model\\TmplCkeCssConfig",
                         "tableEditing": false,
                         "bbcode": false
                     },
@@ -110,7 +110,7 @@
                     "entityProperty": "title"
                 },
                 "descriptionHtml": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\wysiwyg\\WysiwygEiField",
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\cke\\CkeEiProp",
                     "props": {
                         "displayInOverview": false,
                         "displayInDetailView": true,

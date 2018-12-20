@@ -14,7 +14,7 @@
 	<dl>
 		<dt>
 			<i class="fa <?php $html->out($attachment->getFaClassName()) ?>" aria-hidden="true"></i> 
-			<?php $html->link($view->buildUrlStr($attachment->getFile()), $attachment->getTitle(), 
+			<?php $html->link($attachment->getFile(), $attachment->getTitle(), 
 					array('target' => '_blank')) ?>
 		</dt>
 		<dd><?php $html->out($attachment->getDescription())?></dd>

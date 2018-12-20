@@ -15,7 +15,7 @@ use tmpl\model\TmplModel;
 ?>
 <?php $pageHtml->contentItems('main') ?>
 
-<?php if (!empty($asidePanel->getContents())): ?>
+<?php if (null !== $asidePanel && !empty($asidePanel->getContents())): ?>
 	<?php $view->panelStart(TmplModel::PANEL_NAME_RIGHT) ?>
 		<?php $pageHtml->contentItems('aside') ?>
 	<?php $view->panelEnd() ?>

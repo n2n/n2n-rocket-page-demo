@@ -1,5 +1,5 @@
 -- Mysql Backup of n2n7_demo
--- Date 2017-03-09T17:55:47+01:00
+-- Date 2018-12-20T11:05:17+01:00
 -- Backup by 
 
 DROP TABLE IF EXISTS `ci_article`;
@@ -225,7 +225,8 @@ VALUES ( '3',  'Friedrich Schiller',  'Sehr informativer Beitrag, errinert mich 
 ( '7', 'Steve Jobs', 'One more thing...', '2017-03-10 09:00:44', '11'),
 ( '8', 'John Lennon', 'Imagine there\'s no heaven, it\'s easy if you try. No hell below us, above us only sky. ', '2017-03-10 10:25:53', '11'),
 ( '9', 'Bruce Springsteen', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.', '2017-03-12 15:26:43', '11'),
-( '10', 'Bruce Springsteen', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.', '2017-03-09 10:18:54', '10');
+( '10', 'Bruce Springsteen', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.', '2017-03-09 10:18:54', '10'),
+( '11', 'sdfdsfdsf', 'dsfdsf', '2018-12-20 10:21:14', '7');
 
 DROP TABLE IF EXISTS `news_page_controller`;
 CREATE TABLE `news_page_controller` ( 
@@ -251,17 +252,18 @@ CREATE TABLE `page` (
 	`lft` INT UNSIGNED NOT NULL, 
 	`rgt` INT UNSIGNED NOT NULL, 
 	`last_mod` DATETIME NULL, 
-	`last_mod_by` INT UNSIGNED NULL
+	`last_mod_by` INT UNSIGNED NULL, 
+	`indexable` TINYINT UNSIGNED NOT NULL DEFAULT '1'
 	, PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
 
-INSERT INTO `page` (`id`, `internal_page_id`, `external_url`, `page_content_id`, `subsystem_name`, `online`, `in_path`, `hook_key`, `in_navigation`, `nav_target_new_window`, `lft`, `rgt`, `last_mod`, `last_mod_by`) 
-VALUES ( '89',  NULL,  NULL,  '1',  NULL,  '1',  '1',  NULL,  '1',  '0',  '1',  '12',  '2017-03-09 17:01:01',  NULL),
-( '90', NULL, NULL, '6', NULL, '1', '1', NULL, '1', '0', '2', '3', '2017-03-02 09:11:04', NULL),
-( '91', NULL, NULL, '3', NULL, '1', '1', NULL, '1', '0', '10', '11', '2017-03-07 16:49:51', NULL),
-( '92', NULL, NULL, '2', NULL, '1', '1', NULL, '1', '0', '4', '5', '2017-03-02 16:25:20', NULL),
-( '93', NULL, NULL, '4', NULL, '1', '1', NULL, '1', '0', '6', '7', '2017-03-02 16:25:20', NULL),
-( '94', NULL, NULL, '5', NULL, '1', '1', NULL, '1', '0', '8', '9', '2017-03-02 16:25:34', NULL);
+INSERT INTO `page` (`id`, `internal_page_id`, `external_url`, `page_content_id`, `subsystem_name`, `online`, `in_path`, `hook_key`, `in_navigation`, `nav_target_new_window`, `lft`, `rgt`, `last_mod`, `last_mod_by`, `indexable`) 
+VALUES ( '89',  NULL,  NULL,  '1',  NULL,  '1',  '1',  NULL,  '1',  '0',  '1',  '12',  '2017-03-09 17:01:01',  NULL,  '1'),
+( '90', NULL, NULL, '6', NULL, '1', '1', NULL, '1', '0', '2', '3', '2017-03-02 09:11:04', NULL, '1'),
+( '91', NULL, NULL, '3', NULL, '1', '1', NULL, '1', '0', '10', '11', '2017-03-07 16:49:51', NULL, '1'),
+( '92', NULL, NULL, '2', NULL, '1', '1', NULL, '1', '0', '4', '5', '2017-03-02 16:25:20', NULL, '1'),
+( '93', NULL, NULL, '4', NULL, '1', '1', NULL, '1', '0', '6', '7', '2017-03-02 16:25:20', NULL, '1'),
+( '94', NULL, NULL, '5', NULL, '1', '1', NULL, '1', '0', '8', '9', '2017-03-02 16:25:34', NULL, '1');
 
 DROP TABLE IF EXISTS `page_content`;
 CREATE TABLE `page_content` ( 
@@ -285,9 +287,9 @@ DROP TABLE IF EXISTS `page_content_t`;
 CREATE TABLE `page_content_t` ( 
 	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
 	`n2n_locale` VARCHAR(5) NOT NULL, 
-	`se_title` VARCHAR(70) NULL, 
-	`se_description` VARCHAR(255) NULL, 
-	`se_keywords` VARCHAR(128) NULL, 
+	`se_title` VARCHAR(255) NULL, 
+	`se_description` VARCHAR(500) NULL, 
+	`se_keywords` VARCHAR(255) NULL, 
 	`page_content_id` INT UNSIGNED NOT NULL
 	, PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
@@ -529,15 +531,14 @@ VALUES ( '1',  'hero',  '20'),
 DROP TABLE IF EXISTS `rocket_critmod_save`;
 CREATE TABLE `rocket_critmod_save` ( 
 	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
-	`ei_spec_id` VARCHAR(255) NOT NULL, 
-	`ei_mask_id` VARCHAR(255) NULL, 
+	`ei_type_path` VARCHAR(255) NOT NULL, 
 	`name` VARCHAR(255) NOT NULL, 
 	`filter_data_json` TEXT NOT NULL, 
 	`sort_data_json` TEXT NULL
 	, PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
 ALTER TABLE `rocket_critmod_save` ADD UNIQUE INDEX `name` (`name`);
-ALTER TABLE `rocket_critmod_save` ADD INDEX `ei_spec_id` (`ei_spec_id`);
+ALTER TABLE `rocket_critmod_save` ADD INDEX `ei_spec_id` (`ei_type_path`);
 
 
 DROP TABLE IF EXISTS `rocket_custom_grant`;

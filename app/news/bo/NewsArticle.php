@@ -9,7 +9,7 @@ use team\bo\TeamMember;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use n2n\persistence\orm\annotation\AnnoManagedFile;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 use n2n\persistence\orm\annotation\AnnoManyToMany;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use n2n\persistence\orm\annotation\AnnoOrderBy;
@@ -19,7 +19,7 @@ class NewsArticle extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
 		$ai->p('image', new AnnoManagedFile());
 		$ai->p('newsComments', new AnnoOneToMany(NewsComment::getClass(), 'newsArticle', CascadeType::ALL), new AnnoOrderBy(array('date' => 'DESC')));
-		$ai->p('contentItems', new AnnoOneToMany(ContentItem::getClass(), null, CascadeType::ALL));
+		$ai->p('contentItems', new AnnoOneToMany(ContentItem::getClass(), null, CascadeType::ALL, null, true));
 		$ai->p('newsCategories', new AnnoManyToMany(NewsCategory::getClass(), null, CascadeType::PERSIST|CascadeType::MERGE));
 		$ai->p('author', new AnnoManyToOne(TeamMember::getClass()));
 		

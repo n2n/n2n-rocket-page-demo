@@ -2,9 +2,9 @@
 namespace ci\bo;
 
 use n2n\impl\web\ui\view\html\HtmlView;
-use rocket\spec\ei\component\field\impl\string\wysiwyg\WysiwygHtmlBuilder;
 use n2n\impl\web\ui\view\html\HtmlElement;
 use rocket\impl\ei\component\prop\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\string\cke\ui\CkeHtmlBuilder;
 
 class CiWysiwyg extends ContentItem {
 
@@ -19,7 +19,7 @@ class CiWysiwyg extends ContentItem {
 	}
 
 	public function createUiComponent(HtmlView $view) {
-		$wysiwygHtml = new WysiwygHtmlBuilder($view);
-		return new HtmlElement('div', array('class' => 'ci ci-wysiwyg'), $wysiwygHtml->getWysiwygContent($this->contentHtml));
+		$ckeHtml = new CkeHtmlBuilder($view);
+		return new HtmlElement('div', array('class' => 'ci ci-wysiwyg'), $ckeHtml->getOut($this->contentHtml));
 	}
 }

@@ -6,7 +6,7 @@ use n2n\impl\web\ui\view\html\HtmlElement;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoManagedFile;
 use n2n\io\managed\File;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 
 class CiAttachment extends ContentItem {
 	private static function _annos(AnnoInit $ai) {
@@ -53,11 +53,12 @@ class CiAttachment extends ContentItem {
 	
 	public function getTitle() {
 		if ($this->name) return $this->name;
-		return $this->file->getOriginalName();
+		if (null !== $this->file && $this->file->isValid()) return $this->file->getOriginalName();
+		return null;
 	}
 	
 	public function getFaClassName() {
-		if (!$this->file) return 'fa-file-o';
+		if (null === $this->file || !$this->file->isValid()) return 'fa-file-o';
 		
 		switch ($this->file->getOriginalExtension()) {
 			case 'jpg':

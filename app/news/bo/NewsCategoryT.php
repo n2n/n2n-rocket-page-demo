@@ -2,10 +2,10 @@
 namespace news\bo;
 
 use n2n\reflection\ObjectAdapter;
-use rocket\spec\ei\component\field\impl\translation\Translatable;
 use n2n\l10n\N2nLocale;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use n2n\reflection\annotation\AnnoInit;
+use rocket\impl\ei\component\prop\translation\Translatable;
 
 class NewsCategoryT extends ObjectAdapter implements Translatable {
 	

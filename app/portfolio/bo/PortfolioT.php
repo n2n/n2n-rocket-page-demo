@@ -4,19 +4,18 @@ namespace portfolio\bo;
 
 use n2n\l10n\N2nLocale;
 use n2n\reflection\ObjectAdapter;
-use rocket\spec\ei\component\field\impl\translation\Translatable;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 use n2n\persistence\orm\CascadeType;
 use n2n\persistence\orm\annotation\AnnoOrderBy;
-use page\annotation\AnnoPageCiPanels;
+use rocket\impl\ei\component\prop\translation\Translatable;
 
 class PortfolioT extends ObjectAdapter implements Translatable {
 	private static function _annos(AnnoInit $ai) {
 		$ai->p('portfolio', new AnnoManyToOne(Portfolio::getClass()));
-		$ai->p('description', new AnnoOneToMany(ContentItem::getClass(), null, CascadeType::ALL),
+		$ai->p('description', new AnnoOneToMany(ContentItem::getClass(), null, CascadeType::ALL, null, true),
 				new AnnoOrderBy(array('orderIndex' => 'ASC')));
 		
 	}

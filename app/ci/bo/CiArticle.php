@@ -2,7 +2,7 @@
 namespace ci\bo;
 
 use n2n\impl\web\ui\view\html\HtmlView;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 use n2n\io\managed\File;
 use n2n\persistence\orm\annotation\AnnoManagedFile;
 use n2n\reflection\annotation\AnnoInit;

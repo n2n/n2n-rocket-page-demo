@@ -1,9 +1,9 @@
 <?php
 use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\web\ui\view\View;
-use rocket\spec\ei\component\field\impl\string\wysiwyg\WysiwygHtmlBuilder;
 use n2n\io\managed\img\impl\ThSt;
 use ci\bo\CiArticle;
+use rocket\impl\ei\component\prop\string\cke\ui\CkeHtmlBuilder;
 
 $view = HtmlView::view($this);
 $html = HtmlView::html($view);
@@ -11,7 +11,7 @@ $html = HtmlView::html($view);
 $article = $view->getParam('article');
 $view->assert($article instanceof CiArticle);
  
-$htmlWysiwyg = new WysiwygHtmlBuilder($view);
+$ckeHtml = new CkeHtmlBuilder($view);
 
 ?>
 <article class="ci ci-article row">
@@ -20,6 +20,6 @@ $htmlWysiwyg = new WysiwygHtmlBuilder($view);
     </div>
     <div class="col-sm-8">
         <h2><?php $html->out($article->getTitle()) ?></h2>
-        <?php $htmlWysiwyg->out($article->getDescriptionHtml()) ?>
+        <?php $ckeHtml->out($article->getDescriptionHtml()) ?>
     </div>
 </article>

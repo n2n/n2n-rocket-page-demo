@@ -4,7 +4,7 @@
 	use n2n\web\ui\view\View;
 	use portfolio\bo\Portfolio;
 use page\ui\PageHtmlBuilder;
-use rocket\spec\ei\component\field\impl\ci\model\ContentItem;
+use rocket\impl\ei\component\prop\ci\model\ContentItem;
 
 	$view = HtmlView::view($this);
 	$html = HtmlView::html($view);

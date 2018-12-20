@@ -7,7 +7,7 @@ use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use n2n\l10n\N2nLocale;
-use rocket\spec\ei\component\field\impl\translation\Translator;
+use rocket\impl\ei\component\prop\translation\Translator;
 
 class Team extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {

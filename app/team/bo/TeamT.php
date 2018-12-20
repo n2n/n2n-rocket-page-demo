@@ -4,9 +4,9 @@ namespace team\bo;
 
 use n2n\reflection\ObjectAdapter;
 use n2n\reflection\annotation\AnnoInit;
-use rocket\spec\ei\component\field\impl\translation\Translatable;
 use n2n\l10n\N2nLocale;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
+use rocket\impl\ei\component\prop\translation\Translatable;
 
 class TeamT extends ObjectAdapter implements Translatable {
 	private static function _annos(AnnoInit $ai) {
